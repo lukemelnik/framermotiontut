@@ -18,10 +18,14 @@ export default function BasicsOfMotion() {
         {isVisible && (
           <motion.div
             className="bg-gradient-to-r from-slate-600 to-slate-950 w-64 h-64 rounded-xl"
-            initial={{ rotate: "0deg", scale: 0 }}
-            animate={{ rotate: "180deg", scale: 1 }}
-            exit={{ rotate: "0deg", scale: 0 }}
-            transition={{ duration: 2, ease: "backInOut" }}
+            initial={{ rotate: "0deg", scale: 0, y: 0 }}
+            animate={{ rotate: "180deg", scale: 1, y: [0, 50, -50, 0] }}
+            exit={{ rotate: "0deg", scale: 0, x: 1000 }}
+            transition={{
+              duration: 3,
+              ease: "backInOut",
+              times: [0, 0.25, 0.75, 1],
+            }}
           ></motion.div>
         )}
       </AnimatePresence>

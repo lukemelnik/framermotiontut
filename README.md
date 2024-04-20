@@ -9,3 +9,5 @@
 3. Gestures: whileHover & whileTap, can still controll durations with transition.
 
 4. Use `<MotionConfig>` to apply settings to multiple elements
+
+5. Variants: you can define multiple actions and trigger them differently e.g. on hover vs tap or externally via button.

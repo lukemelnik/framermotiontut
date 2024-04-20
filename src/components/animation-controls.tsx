@@ -1,9 +1,30 @@
-import { motion, AnimatePresence, easeInOut } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  easeInOut,
+  useAnimationControls,
+} from "framer-motion";
 
-export default function AnimationControls() {
+export default function AnimationControlsComponent() {
+  const controls = useAnimationControls();
+  function handleClickGrow() {
+    controls.start("grow");
+  }
+  function handleClickShrink() {
+    controls.start("shrink");
+  }
   return (
     <div>
-      <motion.button className="bg-blue-600 mb-5 shadow-lg text-slate-300 px-5 py-3 rounded-xl">
+      <motion.button
+        onClick={handleClickGrow}
+        className="bg-blue-600 mb-5 shadow-lg text-slate-300 px-5 py-3 rounded-xl"
+      >
+        Hide/Show
+      </motion.button>
+      <motion.button
+        onClick={handleClickShrink}
+        className="bg-red-600 mb-5 shadow-lg text-slate-300 px-5 py-3 rounded-xl"
+      >
         Hide/Show
       </motion.button>
       <motion.div
@@ -15,9 +36,9 @@ export default function AnimationControls() {
             transition: { duration: 0.9, ease: "easeInOut" },
           },
           grow: { scale: 1.1, transition: { duration: 0.3 } },
+          shrink: { scale: 1 },
         }}
-        whileHover="flip"
-        whileTap="grow"
+        animate={controls}
       ></motion.div>
     </div>
   );

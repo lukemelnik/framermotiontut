@@ -11,3 +11,5 @@
 4. Use `<MotionConfig>` to apply settings to multiple elements
 
 5. Variants: you can define multiple actions and trigger them differently e.g. on hover vs tap or externally via button.
+
+6. Pass off animation control to another component with `const controls = useAnimationControls()` hook. You can then trigger it with an event handler function, inside using controls.start('animation-name')

@@ -1,9 +1,4 @@
-import {
-  motion,
-  AnimatePresence,
-  easeInOut,
-  useAnimationControls,
-} from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 
 export default function AnimationControlsComponent() {
   const controls = useAnimationControls();
@@ -19,13 +14,13 @@ export default function AnimationControlsComponent() {
         onClick={handleClickGrow}
         className="bg-blue-600 mb-5 shadow-lg text-slate-300 px-5 py-3 rounded-xl"
       >
-        Hide/Show
+        Grow
       </motion.button>
       <motion.button
         onClick={handleClickShrink}
         className="bg-red-600 mb-5 shadow-lg text-slate-300 px-5 py-3 rounded-xl"
       >
-        Hide/Show
+        Shrink
       </motion.button>
       <motion.div
         className="bg-gradient-to-r from-slate-600 to-slate-950 w-64 h-64 rounded-xl"

@@ -1,7 +1,9 @@
+import BasicsOfMotion from "./components/basics-of-motion";
+
 function App() {
   return (
     <>
-      <div>hello</div>
+      <BasicsOfMotion />
     </>
   );
 }
